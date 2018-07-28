@@ -13,7 +13,7 @@ const when = (condition, config, negativeConfig) =>
   condition ? ensureArray(config) : ensureArray(negativeConfig);
 
 // primary config:
-const title = 'Aurelia Navigation Skeleton';
+const title = 'Aurelia HN';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
@@ -100,7 +100,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       } : undefined,
       metadata: {
         // available in index.ejs //
-        title, server, baseUrl, production
+        title, server, baseUrl
       }
     }),
     ...when(extractCss, new ExtractTextPlugin({

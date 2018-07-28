@@ -1,0 +1,12 @@
+<template bindable="router">
+  <!-- Importing CSS -->
+  <require from="./nav-bar.css"></require>
+  
+  <nav>
+    <ul>
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active': null}">
+        <a href.bind="row.href">${row.title}</a>
+      </li>
+    </ul>
+  </nav>
+</template>

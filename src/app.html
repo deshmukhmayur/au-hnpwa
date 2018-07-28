@@ -1,3 +1,14 @@
 <template>
-  <h1>${message}</h1>
+  <!-- Importing CSS -->
+  <require from="ionicons/dist/css/ionicons.min.css"></require>
+  <require from="./app.css"></require>
+  <!-- Importing Components -->
+  <require from="resources/elements/top-header/top-header.html"></require>
+  <require from="resources/elements/nav-bar/nav-bar.html"></require>
+  
+  <top-header title.bind="router.title"></top-header>
+  <main>
+    <router-view></router-view>
+  </main>
+  <nav-bar router.bind="router"></nav-bar>
 </template>

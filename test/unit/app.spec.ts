@@ -1,7 +1,9 @@
 import {App} from '../../src/app';
 
-describe('the app', () => {
-  it('says hello', () => {
-    expect(new App().message).toBe('Hello World!');
+const ServiceWorkerSetupMock = { register: jest.fn() };
+
+describe('App Component', () => {
+  it('title is correct', () => {
+    expect(new App(ServiceWorkerSetupMock).title).toBe('Aurelia HN PWA');
   });
 });
