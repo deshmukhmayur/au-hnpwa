@@ -7,8 +7,10 @@
   <require from="resources/elements/nav-bar/nav-bar.html"></require>
   
   <top-header title.bind="router.title"></top-header>
+
   <main>
-    <router-view></router-view>
+    <router-view swap-order="with"></router-view>
   </main>
+
   <nav-bar router.bind="router"></nav-bar>
 </template>

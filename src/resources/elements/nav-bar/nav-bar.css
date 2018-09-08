@@ -13,6 +13,7 @@ nav ul {
   background: white;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
+  z-index: 79;
 }
 
 nav ul li {

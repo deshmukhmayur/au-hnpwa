@@ -20,16 +20,52 @@ a {
 }
 
 main {
-  box-shadow: 0 .25rem 2rem rgba(0,0,0,0.05);
-  background: white;
-  max-width: 90%;
-  margin: 1rem auto;
-  padding: 1rem;
-  box-sizing: border-box;
-  border-radius: .25rem;
+  position: relative;
+  z-index: 9;
 }
 
 h3 {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+section.page {
+  box-shadow: 0 .25rem 2rem rgba(0,0,0,0.05);
+  background: white;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: .25rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section.page.au-enter {
+  transform: translateX(100%);
+}
+section.page.au-enter-active {
+  animation: slideLeftIn .6s;
+}
+section.page.au-leave-active {
+  animation: slideLeftOut .6s;
+}
+
+@keyframes slideLeftIn {
+  0% {
+    left: 100%
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@keyframes slideLeftOut {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: -100%;
+  }
 }
