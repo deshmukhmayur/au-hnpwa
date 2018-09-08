@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  au-hnpwa:
+    image: au-hnpwa
+    build: .
+    volumes:
+      - .:/usr/src/app
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5500:8080
