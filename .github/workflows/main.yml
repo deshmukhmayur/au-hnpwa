@@ -30,4 +30,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.GH_ACTIONS }}
           BRANCH: gh-pages
           FOLDER: dist
-          GIT_CONFIG_NAME: gh-actions
+          GIT_CONFIG_NAME: gh.actions
+          GIT_CONFIG_EMAIL: gh.actions@example.com
