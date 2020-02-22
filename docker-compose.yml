@@ -1,12 +1,17 @@
 version: '3'
 
 services:
-  au-hnpwa:
+  app:
     image: au-hnpwa
     build: .
     volumes:
-      - .:/usr/src/app
+      - .:/src/app/
+      - node_modules:/src/app/node_modules
     environment:
-      NODE_ENV: development
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
     ports:
-      - 5500:8080
+      - 5000:8080
+
+volumes:
+  node_modules:

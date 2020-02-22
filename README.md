@@ -12,6 +12,12 @@ npm install
 npm start
 ```
 
+### Using the Docker Compose
+```bash
+# Start the docker-compose service
+docker-compose up
+```
+
 ## License
 
 This project is licensed under the terms of the [MIT](LICENSE) License.
