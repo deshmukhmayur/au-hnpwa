@@ -1,5 +1,7 @@
 # Aurelia HNPWA
 
+![CI](https://github.com/deshmukhmayur/au-hnpwa/workflows/CI/badge.svg?branch=master)
+
 A HackerNews clone built with the [Aurelia Framework](https://aurelia.io).
 
 ## Usage

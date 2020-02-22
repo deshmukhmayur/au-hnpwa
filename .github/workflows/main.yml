@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: master
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    if: github.actor == github.event.repository.owner.login
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install dependencies
+        run: npm install
+      - name: Build the app
+        run: |
+          NODE_ENV=production
+          npm run build
+      - name: Deploy to github pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.GH_ACTIONS }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          GIT_CONFIG_NAME: gh-actions
